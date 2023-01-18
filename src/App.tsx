@@ -1,15 +1,14 @@
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import darkTheme from "./styles/themes/darkTheme";
-import Habit from "./components/Habit";
+import Pages from "./pages";
 
 function App() {
 
   return (
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
-      <Habit completed={2} />
-      <Habit completed={3} />
+      <Pages />
     </ThemeProvider>
   );
 }
