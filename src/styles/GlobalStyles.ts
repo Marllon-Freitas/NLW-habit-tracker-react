@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "nunito", sans-serif;
 }
 :root {
   --primary-extra-light: ${(props) => props.theme.colors.primary300};
