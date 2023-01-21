@@ -34,7 +34,7 @@ export const SummaryTableHabitEmpty = styled.div`
     width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
-  background-color: var(--primary);
+  background-color: #232323;
   border: 2px solid var(--primary);
   align-items: center;
   display: flex;

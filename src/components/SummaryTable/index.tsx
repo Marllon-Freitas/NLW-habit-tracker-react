@@ -26,7 +26,10 @@ function SummaryTable() {
       </SummaryTableWeeksDay>
       <SummaryTableHabitsContainer>
         {summaryDates.map((date, index) => (
-          <HabitDay key={`${date}-${index}`} />
+          <HabitDay
+            amount={5}
+            completed={Math.floor(Math.random() * 5)}
+          key={`${date}-${index}`} />
         ))}
 
         {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, index) => (

@@ -1,17 +1,31 @@
-import React from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import logo from "../../assets/logo.svg";
-import { Plus } from "phosphor-react";
+import { Plus, X } from "phosphor-react";
 
-import { PageHeader } from "./styled";
+import { PageHeader, DialogOverlay, DialogContent, DialogClose, DialogTitle } from "./styled";
+import NewHabitForm from "../NewHabitForm";
 function Header() {
   return (
     <PageHeader>
       {" "}
       <img src={logo} alt="logo" />
-      <button type="button">
-        <Plus />
-        Novo Hábito
-      </button>
+      <Dialog.Root>
+        <Dialog.Trigger type="button">
+          <Plus />
+          Novo Hábito
+        </Dialog.Trigger>
+
+        <Dialog.Portal>
+          <DialogOverlay />
+          <DialogContent>
+            <DialogClose>
+              <X size={24} aria-label="fechar" />
+            </DialogClose>
+            <DialogTitle>Novo Hábito</DialogTitle>
+            <NewHabitForm />
+          </DialogContent>
+        </Dialog.Portal>
+      </Dialog.Root>
     </PageHeader>
   );
 }
