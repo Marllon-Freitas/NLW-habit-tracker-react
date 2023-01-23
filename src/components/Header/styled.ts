@@ -46,7 +46,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
 export const DialogContent = styled(Dialog.Content)`
   position: absolute;
   padding: 2rem;
-  background-color: #232323;
+  background-color: var(--secondary-background);
   border-radius: 1rem;
   width: 80%;
   max-width: 24rem;
@@ -61,12 +61,12 @@ export const DialogClose = styled(Dialog.Close)`
   right: 1rem;
   border: 0;
   background-color: transparent;
-  color: var(--primary);
+  color: var(--gray);
   font-size: 1.5rem;
   cursor: pointer;
 
   &:hover {
-    color: var(--primary-extra-light);
+    filter: brightness(1.1);
   }
 `;
 
@@ -75,4 +75,3 @@ export const DialogTitle = styled(Dialog.Title)`
   font-weight: 600;
   line-height: 1.5;
 `;
-

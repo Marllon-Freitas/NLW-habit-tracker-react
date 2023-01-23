@@ -10,9 +10,7 @@ function NewHabitForm() {
       <input
         type="text"
         id="title"
-        placeholder="
-          ex: Ler 1 capítulo de um livro por dia
-        "
+        placeholder="ex: Ler 1 capítulo de um livro por dia"
         autoFocus
       />
       <label htmlFor="category">Qual a recorrência?</label>

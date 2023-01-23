@@ -13,6 +13,11 @@ declare module "styled-components" {
       primary900: string;
       secondary: string;
       background: string;
+      secondaryBackground: string;
+      tertiaryBackground: string;
+      quartenaryBackground: string;
+      green: string;
+      gray: string;
       text: string;
     };
   }

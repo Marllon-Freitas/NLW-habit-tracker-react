@@ -5,7 +5,7 @@ interface ProgressBarContainerProps {
 export const ProgressBarContainer = styled.div`
   height: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #262626;
+  background-color: var(--tertiary-background);
   margin-top: 1rem;
   margin-bottom: 1rem;
   

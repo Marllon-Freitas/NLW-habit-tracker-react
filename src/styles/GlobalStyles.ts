@@ -17,6 +17,11 @@ export const GlobalStyles = createGlobalStyle`
   --primary-super-dark: ${(props) => props.theme.colors.primary900};
   --secondary: ${(props) => props.theme.colors.secondary};
   --background: ${(props) => props.theme.colors.background};
+  --secondary-background: ${(props) => props.theme.colors.secondaryBackground};
+  --tertiary-background: ${(props) => props.theme.colors.tertiaryBackground};
+  --quartenary-background: ${(props) => props.theme.colors.quartenaryBackground};
+  --green: ${(props) => props.theme.colors.green};
+  --gray: ${(props) => props.theme.colors.gray};
   --text: ${(props) => props.theme.colors.text};
 }
 

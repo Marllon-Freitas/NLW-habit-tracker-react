@@ -16,13 +16,15 @@ export const NewHabitFormWrapper = styled.form`
   }
 
   input {
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
-    background: #232323;
+    background: var(--quartenary-background);
     color: #fff;
+    font-size: 1rem;
+    margin: 0.3rem 0;
 
     &::placeholder {
-      color: #fff;
+      color: var(--gray);
     }
   }
 
@@ -35,7 +37,7 @@ export const NewHabitFormWrapper = styled.form`
     border-radius: 0.5rem;
     gap: 1rem;
     font-weight: 600;
-    background: green;
+    background: var(--green);
     outline: none;
     border: none;
 

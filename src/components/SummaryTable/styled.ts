@@ -19,6 +19,7 @@ export const SummaryTableWeeksDay = styled.div`
     height: 2rem;
     width: 2rem;
     font-weight: bold;
+    color: var(--gray);
   }
 `;
 
@@ -34,8 +35,8 @@ export const SummaryTableHabitEmpty = styled.div`
     width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
-  background-color: #232323;
-  border: 2px solid var(--primary);
+  background-color: var(--secondary-background);
+  border: 2px solid var(--quartenary-background);
   align-items: center;
   display: flex;
   justify-content: center;

@@ -20,12 +20,25 @@ export const HabitContainer = styled(Popover.Trigger)`
       return "var(--primary-semi-dark)";
     } else if (props.progressColor >= 80 && props.progressColor < 100) {
       return "var(--primary)";
-
     } else {
-      return "#232323";
+      return "var(--secondary-background)";
     }
   }};
-  border: 2px solid var(--primary);
+  border: ${(props: ProgressBarContainerProps) => {
+    if (props.progressColor > 0 && props.progressColor < 20) {
+      return "2px solid var(--primary-super-dark)";
+    } else if (props.progressColor >= 20 && props.progressColor < 40) {
+      return "2px solid var(--primary-extra-dark)";
+    } else if (props.progressColor >= 40 && props.progressColor < 60) {
+      return "2px solid var(--primary-dark)";
+    } else if (props.progressColor >= 60 && props.progressColor < 80) {
+      return "2px solid var(--primary-semi-dark)";
+    } else if (props.progressColor >= 80 && props.progressColor < 100) {
+      return "2px solid var(--primary)";
+    } else {
+      return "2px solid var(--secondary-background)";
+    }
+  }};
   align-items: center;
   display: flex;
   justify-content: center;
@@ -37,11 +50,11 @@ export const PopoverContent = styled(Popover.Content)`
   flex-direction: column;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: #232323;
+  background-color: var(--secondary-background);
 
   span.week-day {
     font-weight: 500;
-    color: #fff;
+    color: var(--gray);
   }
 
   span.date {
@@ -51,6 +64,6 @@ export const PopoverContent = styled(Popover.Content)`
   }
 
   svg {
-    fill: #232323;
+    fill: var(--secondary-background);
   }
 `;

@@ -9,7 +9,12 @@ export default {
     primary800: "#5B21B6",
     primary900: "#4C1D95",
     secondary: "#F59E0B",
-    background: "#1E1E1E",
+    background: "#09090A",
+    secondaryBackground: "#18181B",
+    tertiaryBackground: "#3F3F46",
+    quartenaryBackground: "#27272A",
+    green: "#22C55E",
+    gray: "#A1A1AA",
     text: "#fff",
   },
 };
