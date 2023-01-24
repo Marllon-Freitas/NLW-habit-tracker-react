@@ -10,22 +10,31 @@ import {
 } from "./styled";
 import ProgressBar from "../ProgressBar";
 import { Check } from "phosphor-react";
+import dayjs from "dayjs";
 
 interface HabitDayProps {
-  amount: number;
-  completed: number;
+  date: Date;
+  completed?: number;
+  amount?: number;
 }
 
-function HabitDay({ amount, completed }: HabitDayProps) {
-  const progressPercentage = Math.round((completed / amount) * 100);
+function HabitDay({ completed = 0, amount = 0, date }: HabitDayProps) {
+  const progressPercentage = amount > 0 ? (completed / amount) * 100 : 0;
+
+  const dayAndMonth = dayjs(date).format("DD/MM");
+  const dayOfWeek = dayjs(date).format("dddd");
 
   return (
     <Popover.Root>
       <HabitContainer progressColor={progressPercentage} />
       <Popover.Portal>
         <PopoverContent>
-          <span className="week-day">segunda</span>
-          <span className="date">17/06</span>
+          <span className="week-day">
+            {dayOfWeek}
+          </span>
+          <span className="date">
+            {dayAndMonth}
+          </span>
           <ProgressBar progress={progressPercentage} />
 
           <CheckboxContainer>

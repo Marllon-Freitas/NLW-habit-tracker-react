@@ -9,6 +9,7 @@ import {
   CheckboxIndicatorContainer,
   CheckboxRoot,
 } from "./styled";
+import { api } from "../../lib/axios";
 
 const availableWeeksDays = [
   "Domingo",
@@ -26,7 +27,16 @@ function NewHabitForm() {
 
   const createNewHabit = (event: FormEvent) => {
     event.preventDefault();
-    console.log(title, weekDays);
+
+    if (!title || weekDays.length === 0) return;
+
+    api.post("habits", {
+      title,
+      weekDays,
+    }).then(() => {
+      setTitle("");
+      setWeekDays([]);
+    });
   };
 
   const handleToggleWeekDay = (weekDay: number) => {
@@ -46,6 +56,7 @@ function NewHabitForm() {
         placeholder="ex: Ler 1 capítulo de um livro por dia"
         autoFocus
         onChange={(event) => setTitle(event.target.value)}
+        value={title}
       />
       <label htmlFor="category">Qual a recorrência?</label>
       <CheckboxContainer>
@@ -53,6 +64,7 @@ function NewHabitForm() {
           <CheckboxRoot
             key={weekDay}
             onCheckedChange={() => handleToggleWeekDay(index)}
+            checked={weekDays.includes(index)}
           >
             <CheckboxIndicatorContainer>
               <Checkbox.Indicator>

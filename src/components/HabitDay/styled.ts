@@ -19,7 +19,7 @@ export const HabitContainer = styled(Popover.Trigger)`
       return "var(--primary-dark)";
     } else if (props.progressColor >= 60 && props.progressColor < 80) {
       return "var(--primary-semi-dark)";
-    } else if (props.progressColor >= 80 && props.progressColor < 100) {
+    } else if (props.progressColor >= 80 && props.progressColor <= 100) {
       return "var(--primary)";
     } else {
       return "var(--secondary-background)";

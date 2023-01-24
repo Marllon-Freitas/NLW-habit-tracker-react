@@ -1,4 +1,6 @@
-import React from "react";
+import dayjs from "dayjs";
+import { useState, useEffect } from "react";
+import { api } from "../../lib/axios";
 import { generateDaysFromYearBeginning } from "../../utils/generate-dates-from-year-beginning";
 import HabitDay from "../HabitDay";
 
@@ -13,10 +15,23 @@ import {
   SummaryTableContainer,
   SummaryTableWeeksDay,
   SummaryTableHabitsContainer,
-  SummaryTableHabitEmpty
+  SummaryTableHabitEmpty,
 } from "./styled";
 
+type Summary = Array<{
+  id: string;
+  date: string;
+  amount: number;
+  completed: number;
+}>;
+
 function SummaryTable() {
+  const [summary, setSummary] = useState<Summary>([]);
+
+  useEffect(() => {
+    api.get("/summary").then((response) => setSummary(response.data));
+  }, []);
+
   return (
     <SummaryTableContainer>
       <SummaryTableWeeksDay>
@@ -25,16 +40,24 @@ function SummaryTable() {
         ))}
       </SummaryTableWeeksDay>
       <SummaryTableHabitsContainer>
-        {summaryDates.map((date, index) => (
-          <HabitDay
-            amount={5}
-            completed={Math.floor(Math.random() * 5)}
-          key={`${date}-${index}`} />
-        ))}
+        {summaryDates.map((date, index) => {
+          const dayInSummary = summary.find((day) => {
+            return dayjs(date).isSame(day.date, "day");
+          });
+          return (
+            <HabitDay
+              date={date}
+              completed={dayInSummary?.completed}
+              amount={dayInSummary?.amount}
+              key={`${date}-${index}`}
+            />
+          );
+        })}
 
-        {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, index) => (
-          <SummaryTableHabitEmpty key={`empty-${index}`} />
-        ))}
+        {amountOfDaysToFill > 0 &&
+          Array.from({ length: amountOfDaysToFill }).map((_, index) => (
+            <SummaryTableHabitEmpty key={`empty-${index}`} />
+          ))}
       </SummaryTableHabitsContainer>
     </SummaryTableContainer>
   );
