@@ -13,4 +13,17 @@ declare module "styled-components" {
       text: string;
     };
   }
+
+  export interface DefaultColorProfile {
+    title: string;
+    colors: {
+      primary300: string;
+      primary400: string;
+      primary500: string;
+      primary600: string;
+      primary700: string;
+      primary800: string;
+      primary900: string;
+    };
+  }
 }
