@@ -32,7 +32,7 @@ export const SummaryTableHabitsContainer = styled.div`
 `;
 
 export const SummaryTableHabitEmpty = styled.div`
-    width: 2.5rem;
+  width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.5rem;
   background-color: var(--secondary-background);
@@ -41,4 +41,5 @@ export const SummaryTableHabitEmpty = styled.div`
   display: flex;
   justify-content: center;
   opacity: 0.5;
+  transition: all 0.5s ease-in-out;
 `;

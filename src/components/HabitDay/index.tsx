@@ -1,52 +1,38 @@
 import * as Popover from "@radix-ui/react-popover";
-import * as Checkbox from "@radix-ui/react-checkbox";
 
-import {
-  HabitContainer,
-  PopoverContent,
-  CheckboxContainer,
-  CheckboxIndicatorContainer,
-  CheckboxRoot,
-} from "./styled";
+import { HabitContainer, PopoverContent } from "./styled";
 import ProgressBar from "../ProgressBar";
-import { Check } from "phosphor-react";
 import dayjs from "dayjs";
+import HabitList from "../HabitList";
+import { useState } from "react";
 
 interface HabitDayProps {
   date: Date;
-  completed?: number;
+  defaultCompleted?: number;
   amount?: number;
 }
 
-function HabitDay({ completed = 0, amount = 0, date }: HabitDayProps) {
+function HabitDay({ defaultCompleted = 0, amount = 0, date }: HabitDayProps) {
+  const [completed, setCompleted] = useState(defaultCompleted);
   const progressPercentage = amount > 0 ? (completed / amount) * 100 : 0;
 
   const dayAndMonth = dayjs(date).format("DD/MM");
   const dayOfWeek = dayjs(date).format("dddd");
+
+  const handleCompletedChange = (completed: number) => {
+    setCompleted(completed);
+  };
 
   return (
     <Popover.Root>
       <HabitContainer progressColor={progressPercentage} />
       <Popover.Portal>
         <PopoverContent>
-          <span className="week-day">
-            {dayOfWeek}
-          </span>
-          <span className="date">
-            {dayAndMonth}
-          </span>
+          <span className="week-day">{dayOfWeek}</span>
+          <span className="date">{dayAndMonth}</span>
           <ProgressBar progress={progressPercentage} />
 
-          <CheckboxContainer>
-            <CheckboxRoot>
-              <CheckboxIndicatorContainer>
-                <Checkbox.Indicator>
-                  <Check size={20} />
-                </Checkbox.Indicator>
-              </CheckboxIndicatorContainer>
-              <span>Fazer exercícios</span>
-            </CheckboxRoot>
-          </CheckboxContainer>
+          <HabitList date={date} onCompletedChange={handleCompletedChange} />
 
           <Popover.Arrow height={8} width={16} />
         </PopoverContent>

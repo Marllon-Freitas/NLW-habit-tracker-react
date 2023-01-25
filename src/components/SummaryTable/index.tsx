@@ -40,19 +40,20 @@ function SummaryTable() {
         ))}
       </SummaryTableWeeksDay>
       <SummaryTableHabitsContainer>
-        {summaryDates.map((date, index) => {
-          const dayInSummary = summary.find((day) => {
-            return dayjs(date).isSame(day.date, "day");
-          });
-          return (
-            <HabitDay
-              date={date}
-              completed={dayInSummary?.completed}
-              amount={dayInSummary?.amount}
-              key={`${date}-${index}`}
-            />
-          );
-        })}
+        {summary.length > 0 &&
+          summaryDates.map((date, index) => {
+            const dayInSummary = summary.find((day) => {
+              return dayjs(date).isSame(day.date, "day");
+            });
+            return (
+              <HabitDay
+                date={date}
+                defaultCompleted={dayInSummary?.completed}
+                amount={dayInSummary?.amount}
+                key={`${date}-${index}`}
+              />
+            );
+          })}
 
         {amountOfDaysToFill > 0 &&
           Array.from({ length: amountOfDaysToFill }).map((_, index) => (

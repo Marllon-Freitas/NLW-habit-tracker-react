@@ -6,6 +6,7 @@ export const NewHabitFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 1.5rem;
+  transition: all 0.5s ease-in-out;
 
   label {
     font-weight: 500;
@@ -17,16 +18,23 @@ export const NewHabitFormWrapper = styled.form`
   }
 
   input {
-    padding: 1rem;
+    padding: 1.1rem;
     border-radius: 0.5rem;
     background: var(--quartenary-background);
     color: #fff;
     font-size: 1rem;
     margin: 0.3rem 0;
     border: none;
+    transition: all 0.5s ease-in-out;
+    outline: none;
 
     &::placeholder {
       color: var(--gray);
+    }
+
+    &:focus {
+      outline: auto;
+      outline-color: var(--primary);
     }
   }
 
@@ -42,6 +50,7 @@ export const NewHabitFormWrapper = styled.form`
     background: var(--green);
     outline: none;
     border: none;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
       filter: brightness(1.1);
@@ -54,6 +63,7 @@ export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
 
   & > button {
     border: none;
@@ -66,6 +76,7 @@ export const CheckboxRoot = styled(Checkbox.Root)`
   align-items: center;
   justify-content: start;
   gap: 0.7rem;
+  transition: all 0.2s ease-in-out;
 
   & span {
     font-size: 1rem;
@@ -96,6 +107,7 @@ export const CheckboxIndicatorContainer = styled.div`
   align-items: center;
   border: 2px solid var(--quartenary-background);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     filter: brightness(1.1);

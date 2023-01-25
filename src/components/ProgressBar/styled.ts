@@ -14,5 +14,6 @@ export const ProgressBarContainer = styled.div`
     border-radius: 0.5rem;
     background-color: var(--primary);
     width: ${(props: ProgressBarContainerProps) => props.progress}%;
+    transition: all 0.2s ease-in-out;
   }
 `;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import * as Popover from "@radix-ui/react-popover";
-import * as Checkbox from "@radix-ui/react-checkbox";
 
 interface ProgressBarContainerProps {
   progressColor: number;
@@ -34,7 +33,7 @@ export const HabitContainer = styled(Popover.Trigger)`
       return "2px solid var(--primary-dark)";
     } else if (props.progressColor >= 60 && props.progressColor < 80) {
       return "2px solid var(--primary-semi-dark)";
-    } else if (props.progressColor >= 80 && props.progressColor < 100) {
+    } else if (props.progressColor >= 80 && props.progressColor <= 100) {
       return "2px solid var(--primary)";
     } else {
       return "2px solid var(--secondary-background)";
@@ -66,63 +65,5 @@ export const PopoverContent = styled(Popover.Content)`
 
   svg {
     fill: var(--secondary-background);
-  }
-`;
-
-export const CheckboxContainer = styled.div`
-  margin-top: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-
-  button {
-    border: none;
-    background: none;
-  }
-`;
-
-export const CheckboxRoot = styled(Checkbox.Root)`
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-
-  & span {
-    font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    color: var(--text);
-  }
-
-  & > svg {
-    color: var(--text);
-  }
-
-  &[data-state="checked"] {
-    & > span {
-      text-decoration: line-through;
-      color: var(--gray);
-    }
-    
-    & > div {
-      background-color: var(--green);
-      border-color: var(--green);
-    }
-  }
-`;
-
-export const CheckboxIndicatorContainer = styled.div`
-  height: 2rem;
-  width: 2rem;
-  border-radius: 0.25rem;
-  background-color: var(--secondary-background);
-  border: 2px solid var(--quartenary-background);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid var(--quartenary-background);
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(1.1);
   }
 `;
