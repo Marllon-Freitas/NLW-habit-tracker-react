@@ -1,5 +1,5 @@
 export const purpleProfile = {
-  title: "purpleProfile",
+  title: "Ametista",
   colors: {
     primary300: "#C4B5FD",
     primary400: "#A78BFA",
@@ -12,7 +12,7 @@ export const purpleProfile = {
 };
 
 export const greenProfile = {
-  title: "greenProfile",
+  title: "Esmeralda",
   colors: {
     primary300: "rgb(134 239 172)",
     primary400: "rgb(74 222 128)",
@@ -25,7 +25,7 @@ export const greenProfile = {
 };
 
 export const blueProfile = {
-  title: "blueProfile",
+  title: "Safira",
   colors: {
     primary300: "rgb(147 197 253)",
     primary400: "rgb(96 165 250)",
@@ -38,7 +38,7 @@ export const blueProfile = {
 };
 
 export const redProfile = {
-  title: "redProfile",
+  title: "Rubi",
   colors: {
     primary300: "rgb(255 118 117)",
     primary400: "rgb(255 69 58)",

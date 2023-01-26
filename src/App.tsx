@@ -32,11 +32,7 @@ function App() {
   ];
 
   const handleToggleTheme = () => {
-    if (theme === darkTheme) {
-      setTheme(lightTheme);
-    } else {
-      setTheme(darkTheme);
-    }
+    setTheme(theme.title === "light" ? darkTheme : lightTheme);
   };
 
   return (
@@ -46,6 +42,7 @@ function App() {
         handleToggleTheme={handleToggleTheme}
         actualTheme={theme}
         allColorsProfileAvailable={allColorsProfileAvailable}
+        actualColorsProfile={colorProfile}
         setColorProfile={setColorProfile}
       />
     </ThemeProvider>

@@ -21,7 +21,7 @@ export const NewHabitFormWrapper = styled.form`
     padding: 1.1rem;
     border-radius: 0.5rem;
     background: var(--quartenary-background);
-    color: #fff;
+    color: var(--text);
     font-size: 1rem;
     margin: 0.3rem 0;
     border: none;
