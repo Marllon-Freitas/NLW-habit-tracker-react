@@ -26,17 +26,17 @@ export const HabitContainer = styled(Popover.Trigger)`
   }};
   border: ${(props: ProgressBarContainerProps) => {
     if (props.progressColor > 0 && props.progressColor < 20) {
-      return "2px solid var(--primary-super-dark)";
-    } else if (props.progressColor >= 20 && props.progressColor < 40) {
-      return "2px solid var(--primary-extra-dark)";
-    } else if (props.progressColor >= 40 && props.progressColor < 60) {
       return "2px solid var(--primary-dark)";
-    } else if (props.progressColor >= 60 && props.progressColor < 80) {
+    } else if (props.progressColor >= 20 && props.progressColor < 40) {
       return "2px solid var(--primary-semi-dark)";
-    } else if (props.progressColor >= 80 && props.progressColor <= 100) {
+    } else if (props.progressColor >= 40 && props.progressColor < 60) {
       return "2px solid var(--primary)";
+    } else if (props.progressColor >= 60 && props.progressColor < 80) {
+      return "2px solid var(--primary-light)";
+    } else if (props.progressColor >= 80 && props.progressColor <= 100) {
+      return "2px solid var(--primary-extra-light)";
     } else {
-      return "2px solid var(--secondary-background)";
+      return "2px solid var(--quartenary-background)";
     }
   }};
   align-items: center;
