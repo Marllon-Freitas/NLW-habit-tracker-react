@@ -39,11 +39,29 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
   --green: ${(props) => props.theme.colors.green};
   --gray: ${(props) => props.theme.colors.gray};
   --text: ${(props) => props.theme.colors.text};
+
+  --square-base-size: clamp(1.9rem, 5vw, 2.5rem);
+  --square-border-radius-size: clamp(0.2rem, 1vw, 0.5rem);
+  --grid-gap-size: clamp(0.3rem, 2vw, 0.5rem);
 }
 
 html {
   background: var(--background);
   color: var(--text);
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+    background-color: var(--quaternary-background);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-background);
+    height: 2px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tertiary-background);
+  }
 }
 
 button {

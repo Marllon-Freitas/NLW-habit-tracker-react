@@ -3,12 +3,20 @@ import * as Dialog from "@radix-ui/react-dialog";
 
 export const PageHeader = styled.header`
   width: 100%;
-  max-width: 768px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+
+  & > svg {
+    width: clamp(4rem, 11vw, 100%);
+    min-width: 4rem;
+  }
 
   button {
     border: 1px solid var(--primary);

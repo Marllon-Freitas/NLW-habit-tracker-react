@@ -6,9 +6,9 @@ interface ProgressBarContainerProps {
 }
 
 export const HabitContainer = styled(Popover.Trigger)`
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.5rem;
+  width: var(--square-base-size);
+  height: var(--square-base-size);
+  border-radius: var(--square-border-radius-size);
   background-color: ${(props: ProgressBarContainerProps) => {
     if (props.progressColor > 0 && props.progressColor < 20) {
       return "var(--primary-super-dark)";

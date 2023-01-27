@@ -9,6 +9,17 @@ export const PageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+  }
+
+  @media (max-height: 400px) {
+    height: 100%;
+    padding: 2rem 0;
+  }
 `;
 
 export const PageContent = styled.div`
@@ -47,7 +58,6 @@ export const RadioGroupRoot = styled(RadioGroup.Root)`
   gap: 10px;
   width: 100%;
   height: 100%;
-
 
   .RadioGroupItemWrapper {
     display: flex;
